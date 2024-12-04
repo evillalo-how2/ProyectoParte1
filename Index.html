@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Cámaras</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="Record.png" type="image/x-icon">
+</head>
+<body class="bg-gray-100">
+
+    <header class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-2xl font-bold">Panel de Cámaras de Vigilancia</h1>
+        </div>
+    </header>
+
+    <main class="container mx-auto my-8">
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <!-- Cámaras -->
+
+        
+            <!--Cámara múltiple--->
+            <div class="camera-feed bg-gray-800 rounded-lg p-4 shadow-lg">
+                <h2 class="text-white text-lg font-semibold mb-2 text-center">Frente</h2>
+                <div class="relative w-full h-48 bg-black rounded overflow-hidden"> 
+                    <img id="feed-frente" src="interruption-tv.gif" alt="Desconectado" class="w-full h-full object-cover"> <!--Clase para evitar el desborde de imagen y adaptarlo a la clase de la div-->
+                </div>
+                <div class="mt-4">
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 w-full" data-camera="frente">Ver Cámara</button>
+                    <div class="mt-2">
+                        <label for="camera-select-frente" class="text-gray-300 text-sm">Seleccionar Cámara:</label>
+                        <select id="camera-select-frente" class="bg-gray-700 text-white px-4 py-2 rounded w-full mt-1">
+                            <option value="frente-1">Cámara 1</option>
+                            <option value="frente-2">Cámara 2</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!--Cámara simple--->
+            <div class="camera-feed bg-gray-800 rounded-lg p-4 shadow-md">
+                <h2 class="text-white text-lg font-semibold mb-2 text-center">Sala</h2>
+                <div class="relative w-full h-48 bg-black rounded overflow-hidden">
+                    <img id="feed-sala" src="interruption-tv.gif" alt="Desconectado" class="w-full h-full object-cover">
+                </div>
+                <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 w-full" data-camera="sala">Ver Cámara</button>
+            </div>
+
+
+            <div class="camera-feed bg-gray-800 rounded-lg p-4 shadow-md">
+                <h2 class="text-white text-lg font-semibold mb-2 text-center">Cocina</h2>
+                <div class="relative w-full h-48 bg-black rounded overflow-hidden">
+                    <img id="feed-cocina" src="interruption-tv.gif" alt="Desconectado" class="w-full h-full object-cover">
+                </div>
+                <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 w-full" data-camera="cocina">Ver Cámara</button>
+            </div>
+
+
+            <div class="camera-feed bg-gray-800 rounded-lg p-4 shadow-md">
+                <h2 class="text-white text-lg font-semibold mb-2 text-center">Pasillo</h2>
+                <div class="relative w-full h-48 bg-black rounded overflow-hidden">
+                    <img id="feed-pasillo" src="interruption-tv.gif" alt="Desconectado" class="w-full h-full object-cover">
+                </div>
+                <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 w-full" data-camera="pasillo">Ver Cámara</button>
+            </div>
+
+
+            <div class="camera-feed bg-gray-800 rounded-lg p-4 shadow-md">
+                <h2 class="text-white text-lg font-semibold mb-2 text-center">Cuartos</h2>
+                <div class="relative w-full h-48 bg-black rounded overflow-hidden">
+                    <img id="feed-cuartos" src="interruption-tv.gif" alt="Desconectado" class="w-full h-full object-cover">
+                </div>
+        <div class="mt-4">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 w-full" data-camera="cuartos">Ver Cámara</button>
+            <div class="mt-2">
+                <label for="camera-select-frente" class="text-gray-300 text-sm">Seleccionar Cámara:</label>
+                <select id="camera-select-frente" class="bg-gray-700 text-white px-4 py-2 rounded w-full mt-1">
+                    <option value="cuarto-1">Cámara 1</option>
+                    <option value="cuarto-2">Cámara 2</option>
+                    <option value="cuarto-3">Cámara 3</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+            <div class="camera-feed bg-gray-800 rounded-lg p-4 shadow-md">
+                <h2 class="text-white text-lg font-semibold mb-2 text-center">Patio</h2>
+                <div class="relative w-full h-48 bg-black rounded overflow-hidden">
+                    <img id="feed-patio" src="interruption-tv.gif" alt="Desconectado" class="w-full h-full object-cover">
+                </div>
+                <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 w-full" data-camera="patio">Ver Cámara</button>
+            </div>
+        </section>
+        <!-- Transmisión en vivo -->
+        <section id="camera-live" class="bg-gray-800 rounded-lg shadow-lg p-6 text-center text-white">
+            <h2 class="text-xl font-bold mb-4">Transmisión en Vivo</h2>
+            <div id="live-feed" class="bg-black rounded w-full h-96 flex items-center justify-center">
+                <p class="text-gray-400">Selecciona una cámara para iniciar la transmisión.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 text-center py-4">
+        <p>&copy; 2024 Sistema de Cámaras. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
